@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Mar 11 15:39:28 COT 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-017f-7ab5-2e33-00001006e508 
+on database directory memory:D:\Gamachicas\APP_Gamachicas\GamachicasAPP\pillihuamanSegurity\567fbe54-d4da-45cd-93da-b967de57ddcc with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/C:/Users/pilli/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_321-b07
+user.dir=D:\Gamachicas\APP_Gamachicas\GamachicasAPP\pillihuamanSegurity
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
