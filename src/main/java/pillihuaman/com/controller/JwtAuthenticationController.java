@@ -31,6 +31,7 @@ import pillihuaman.com.model.response.RespUser;
 import pillihuaman.com.requestResponse.AuthenticationResponse;
 import pillihuaman.com.requestResponse.JwtRequest;
 import pillihuaman.com.service.UserService;
+
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
@@ -43,7 +44,7 @@ public class JwtAuthenticationController {
 	@Autowired
 	private UserService userService;
 
-	@Operation(summary = "Create product", description = "Create product", tags = { "" }, security = {
+	@Operation(summary = "Create session", description = "Create session", tags = { "" }, security = {
 			@SecurityRequirement(name = Constants.BEARER_JWT) })
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = Constants.SERVER_200, description = Constants.OPERACION_EXITOSA),
