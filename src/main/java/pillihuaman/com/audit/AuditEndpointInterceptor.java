@@ -25,8 +25,8 @@ import com.fasterxml.jackson.datatype.jsr310.ser.InstantSerializer;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import pillihuaman.com.help.RoutingKey;
-import pillihuaman.com.model.response.RespBase;
+import pillihuaman.com.base.request.ReqBase;
+
 
 @Component
 public class AuditEndpointInterceptor extends HandlerInterceptorAdapter {
@@ -76,8 +76,8 @@ public class AuditEndpointInterceptor extends HandlerInterceptorAdapter {
 					endpointLog.setLoggedApplicationName(loggedApplicationName);
 					endpointLog.setOperationDate(Instant.now());
 
-					RespBase<EndpointLog> request = new RespBase<>();
-					request.setPayload(endpointLog);
+					ReqBase<EndpointLog> request = new ReqBase<>();
+					//request.setPayload(endpointLog);
 					String jsonMessage = mapper.writeValueAsString(request);
 					// Se escribe en la cola
 					//rabbitProducer.writeMessage(RoutingKey.LOG_SERVICE, jsonMessage);

@@ -22,15 +22,15 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import pillihuaman.com.JwtTokenUtil;
 import pillihuaman.com.JwtUserDetailsService;
+import pillihuaman.com.base.request.ReqUser;
+import pillihuaman.com.base.response.RespBase;
+import pillihuaman.com.base.response.RespUser;
+import pillihuaman.com.basebd.userGeneral.domain.dao.UserGeneralRepositoy;
 import pillihuaman.com.crypto.PasswordUtils;
 import pillihuaman.com.help.Constants;
 import pillihuaman.com.help.MaestrosUtilidades;
-import pillihuaman.com.model.request.ReqUser;
-import pillihuaman.com.model.response.RespBase;
-import pillihuaman.com.model.response.RespUser;
 import pillihuaman.com.requestResponse.AuthenticationResponse;
 import pillihuaman.com.requestResponse.JwtRequest;
-import pillihuaman.com.service.UserService;
 
 @RestController
 @CrossOrigin
@@ -42,7 +42,7 @@ public class JwtAuthenticationController {
 	private JwtUserDetailsService userDetailsService;
 
 	@Autowired
-	private UserService userService;
+	private UserGeneralRepositoy userGeneralRepositoy;
 
 	@Operation(summary = "Create session", description = "Create session", tags = { "" }, security = {
 			@SecurityRequirement(name = Constants.BEARER_JWT) })
@@ -96,7 +96,7 @@ public class JwtAuthenticationController {
 
 			//String codeString = bCryptPasswordEncoder.encode(password);
 
-			RespBase<RespUser> userResponse = userService.getUserByMail(mail);
+			RespBase<RespUser> userResponse = userGeneralRepositoy.getUserByMail(mail);
 					
 			if (userResponse != null && userResponse.getPayload() != null) {
 				if (!MaestrosUtilidades.isEmpty(userResponse.getPayload().getUsername())) {

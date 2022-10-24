@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import pillihuaman.com.base.request.ReqUser;
+import pillihuaman.com.base.response.RespBase;
+import pillihuaman.com.base.response.RespUser;
 import pillihuaman.com.crypto.PasswordUtils;
 import pillihuaman.com.help.MaestrosUtilidades;
-import pillihuaman.com.model.request.ReqUser;
-import pillihuaman.com.model.response.RespBase;
-import pillihuaman.com.model.response.RespUser;
 import pillihuaman.com.requestResponse.JwtRequest;
 
 @RestController
