@@ -1,7 +1,6 @@
 
 
 package pillihuaman.com;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -64,8 +63,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// We don't need CSRF for this example
 		httpSecurity.cors().and().csrf().disable()
 				// dont authenticate this particular request
-				.authorizeRequests().antMatchers("/private/v1/security/authenticate").permitAll()
-				.//antMatchers( "/", "/authenticate", "/WebServiceImagen/GetPicture","/authenticate/generatePassword").permitAll().
+				.authorizeRequests()
+				.antMatchers( "/private/v1/security/authenticate","/authenticate", "/WebServiceImagen/GetPicture","/authenticate/generatePassword").permitAll().
 
 				// all other requests need to be authenticated
 				anyRequest().authenticated().and().

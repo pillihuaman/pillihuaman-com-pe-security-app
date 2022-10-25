@@ -1,5 +1,4 @@
 package pillihuaman.com.crypto;
-
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;

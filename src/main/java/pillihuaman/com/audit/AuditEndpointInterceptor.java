@@ -25,8 +25,8 @@ import com.fasterxml.jackson.datatype.jsr310.ser.InstantSerializer;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import pillihuaman.com.base.request.ReqBase;
-
+import pillihuaman.com.base.response.RespBase;
+import pillihuaman.com.crypto.MyJsonWebToken;
 
 @Component
 public class AuditEndpointInterceptor extends HandlerInterceptorAdapter {
@@ -48,10 +48,10 @@ public class AuditEndpointInterceptor extends HandlerInterceptorAdapter {
 			if (handler instanceof HandlerMethod) {
 				String loggedUser = ANONIMO;
 				String loggedApplicationName = ANONIMO;
-				pillihuaman.com.crypto.MyJsonWebToken jwt = (pillihuaman.com.crypto.MyJsonWebToken) servletRequest.getAttribute("jwt");
+				MyJsonWebToken jwt = (MyJsonWebToken) servletRequest.getAttribute("jwt");
 				if (jwt != null) {
-					//loggedUser = jwt.getUsuario().getUsuario();
-					//loggedApplicationName = jwt.getAplicacion().getNombre();
+					// loggedUser = jwt.getUsuario().getUsuario();
+					// loggedApplicationName = jwt.getAplicacion().getNombre();
 				}
 				HandlerMethod handlerMethod = (HandlerMethod) handler;
 				Method endpointMethod = handlerMethod.getMethod();
@@ -76,11 +76,11 @@ public class AuditEndpointInterceptor extends HandlerInterceptorAdapter {
 					endpointLog.setLoggedApplicationName(loggedApplicationName);
 					endpointLog.setOperationDate(Instant.now());
 
-					ReqBase<EndpointLog> request = new ReqBase<>();
-					//request.setPayload(endpointLog);
+					RespBase<EndpointLog> request = new RespBase<>();
+					request.setPayload(endpointLog);
 					String jsonMessage = mapper.writeValueAsString(request);
 					// Se escribe en la cola
-					//rabbitProducer.writeMessage(RoutingKey.LOG_SERVICE, jsonMessage);
+					// rabbitProducer.writeMessage(RoutingKey.LOG_SERVICE, jsonMessage);
 				}
 			}
 
@@ -102,6 +102,16 @@ public class AuditEndpointInterceptor extends HandlerInterceptorAdapter {
 	public static class EndpointLog {
 
 		private String moduleName;
+		private String endpointName;
+		private String methodName;
+		private String httpMethod;
+		private String path;
+		private String parameters;
+		private String loggedUser;
+		private String loggedApplicationName;
+		@JsonSerialize(using = InstantSerializer.class)
+		@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ssZ", timezone = "UTC")
+		private Instant operationDate;
 		public String getModuleName() {
 			return moduleName;
 		}
@@ -156,15 +166,7 @@ public class AuditEndpointInterceptor extends HandlerInterceptorAdapter {
 		public void setOperationDate(Instant operationDate) {
 			this.operationDate = operationDate;
 		}
-		private String endpointName;
-		private String methodName;
-		private String httpMethod;
-		private String path;
-		private String parameters;
-		private String loggedUser;
-		private String loggedApplicationName;
-		@JsonSerialize(using = InstantSerializer.class)
-		@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ssZ", timezone = "UTC")
-		private Instant operationDate;
+		
+		
 	}
 }
