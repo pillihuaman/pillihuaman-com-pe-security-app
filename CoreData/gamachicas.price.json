@@ -1,0 +1,2 @@
+{"_id":{"$oid":"63c88b1fc366138ea8c73636"},"idProduct":1,"highPrice":12,"lowPrice":0,"currency":"PEN","simbol":"S/."}
+{"_id":{"$oid":"63c88b1fc366138ea8c73637"},"idProduct":2,"highPrice":12,"lowPrice":0,"currency":"USD","simbol":"$"}

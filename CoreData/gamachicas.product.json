@@ -1,0 +1,2 @@
+{"_id":{"$oid":"641ad69729cd1d3dcfcca9e6"},"description":"casacaascasacaas","name":"casacaas","idUser":{"$oid":"640d21993f52714aa642aaf4"},"auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2023-03-22T10:21:11.877Z"}}}
+{"_id":{"$oid":"641ad6e729cd1d3dcfcca9e7"},"description":"chompitascasacaascasacaascasacaas","name":"chompitas","idUser":{"$oid":"640d21993f52714aa642aaf4"},"auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2023-03-22T10:22:31.180Z"}}}

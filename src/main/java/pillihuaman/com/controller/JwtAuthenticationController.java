@@ -75,6 +75,7 @@ public class JwtAuthenticationController {
                 ReqControl d = new ReqControl();
                 d.setId_user(respo.getPayload().getId_user());
                 request.setData(d);
+                auth.setId_user(respo.getPayload().getId_user().toString());
                 RespBase<RespControl> re = controlService.listControl(null, request);
                 if (re != null) {
                     if (re.getPayload() != null) {

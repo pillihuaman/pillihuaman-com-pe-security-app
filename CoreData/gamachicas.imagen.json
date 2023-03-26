@@ -1,0 +1,3 @@
+{"_id":{"$oid":"63a6c71237d7541b1f69c7a2"},"description":"fd","name":"454","idUser":0,"idHeadImagen":1,"idProduct":2,"countRanking":0,"clickCount":67,"auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2022-12-24T09:32:02.687Z"}}}
+{"_id":{"$oid":"63a6c74537d7541b1f69c7a9"},"description":"vcxvxcvx","name":"vcxvc","idUser":0,"idHeadImagen":2,"idProduct":1,"countRanking":0,"clickCount":167,"auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2022-12-24T09:32:53.574Z"}}}
+{"_id":{"$oid":"63ac18c9ffcf0f7edca5e08c"},"description":"rewr","name":"wer","idUser":0,"idHeadImagen":3,"idProduct":2,"countRanking":0,"clickCount":363,"auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2022-12-28T10:22:01.593Z"}}}

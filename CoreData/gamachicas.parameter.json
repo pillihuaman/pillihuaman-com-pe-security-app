@@ -1,0 +1,8 @@
+{"_id":{"$oid":"63c433c595d3135a68c2bc2a"},"idParameter":1,"idCode":"PCT000001","name":"XS","Description":"talla de productos tipo ropa","auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2022-11-13T08:46:42.996Z"}}}
+{"_id":{"$oid":"63c433c595d3135a68c2bc2b"},"idParameter":2,"idCode":"PCT000001","name":"S","Description":"talla de productos tipo ropa","auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2022-11-13T08:46:42.996Z"}}}
+{"_id":{"$oid":"63c433c595d3135a68c2bc2c"},"idParameter":3,"idCode":"PCT000001","name":"M","Description":"talla de productos tipo ropa","auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2022-11-13T08:46:42.996Z"}}}
+{"_id":{"$oid":"63c433c595d3135a68c2bc2d"},"idParameter":4,"idCode":"PCT000001","name":"L","Description":"talla de productos tipo ropa","auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2022-11-13T08:46:42.996Z"}}}
+{"_id":{"$oid":"63c433c595d3135a68c2bc2e"},"idParameter":5,"idCode":"PCT000001","name":"XL","Description":"talla de productos tipo ropa","auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2022-11-13T08:46:42.996Z"}}}
+{"_id":{"$oid":"63c433c595d3135a68c2bc2f"},"idParameter":6,"idCode":"PCT000001","name":"XXL","Description":"talla de productos tipo ropa","auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2022-11-13T08:46:42.996Z"}}}
+{"_id":{"$oid":"63c433c595d3135a68c2bc30"},"idParameter":7,"idCode":"PCT000001","name":"XXXL","Description":"talla de productos tipo ropa","auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2022-11-13T08:46:42.996Z"}}}
+{"_id":{"$oid":"63c88913c366138ea8c73635"},"auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2022-11-13T08:46:42.996Z"}}}

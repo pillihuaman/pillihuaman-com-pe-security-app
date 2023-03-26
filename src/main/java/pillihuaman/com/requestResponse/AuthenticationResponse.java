@@ -14,16 +14,16 @@ public class AuthenticationResponse {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private ObjectId id_user;
+	private String id_user;
 	private String token;
 	private int idSystem;
 	private List<ReqControl> control;
 
-	public ObjectId getId_user() {
+	public String getId_user() {
 		return id_user;
 	}
 
-	public void setId_user(ObjectId id_user) {
+	public void setId_user(String id_user) {
 		this.id_user = id_user;
 	}
 

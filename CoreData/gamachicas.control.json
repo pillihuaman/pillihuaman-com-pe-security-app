@@ -1,0 +1,1 @@
+{"_id":{"$oid":"6413df3ba700f128f81ba073"},"idMenu":1,"idSystem":1,"idCode":"111saveSave Stock","idPage":1,"description":"Save Stock","icono":"btn","iconClass":"btn btn-primary","status":1,"styleClass":"btn btn-primary","text":"save","id_user":"640d21993f52714aa642aaf4","auditEntity":{"cod_usuRegis":"63c88913c366138ea8c73635","fec_regis":{"$date":"2023-03-17T03:30:34.845Z"}}}
