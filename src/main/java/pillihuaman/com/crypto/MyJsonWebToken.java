@@ -4,10 +4,6 @@ import java.io.Serializable;
 
 import org.jboss.resteasy.jwt.JsonWebToken;
 
-import lombok.Getter;
-
-@SuppressWarnings("serial")
-@Getter
 public class MyJsonWebToken extends JsonWebToken implements Serializable{
 	
 	private static long serialVersionUID = 1L;
@@ -28,7 +24,7 @@ public class MyJsonWebToken extends JsonWebToken implements Serializable{
 
 
 
-	@Getter
+
 	public static class User {
 
 		private Long idUser;
@@ -38,7 +34,7 @@ public class MyJsonWebToken extends JsonWebToken implements Serializable{
 	}
 
 
-	@Getter
+
 	public static class Aplication {
 
 		private Long aplicationID;

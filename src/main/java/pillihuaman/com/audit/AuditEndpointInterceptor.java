@@ -1,12 +1,9 @@
 package pillihuaman.com.audit;
 
-import java.lang.reflect.Method;
-import java.time.Instant;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.InstantSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,17 +13,14 @@ import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.ser.InstantSerializer;
-
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
 import pillihuaman.com.base.response.RespBase;
 import pillihuaman.com.crypto.MyJsonWebToken;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.lang.reflect.Method;
+import java.time.Instant;
+import java.util.Map;
 
 @Component
 public class AuditEndpointInterceptor extends HandlerInterceptorAdapter {
@@ -96,9 +90,7 @@ public class AuditEndpointInterceptor extends HandlerInterceptorAdapter {
 	 * @author ttorres
 	 *
 	 */
-	@Getter
-	@Setter
-	@ToString
+
 	public static class EndpointLog {
 
 		private String moduleName;
