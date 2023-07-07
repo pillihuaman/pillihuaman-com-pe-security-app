@@ -12,12 +12,11 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pillihuaman.com.Service.ControlService;
+import pillihuaman.com.base.commons.MyJsonWebToken;
 import pillihuaman.com.base.request.ReqBase;
 import pillihuaman.com.base.request.ReqControl;
-import pillihuaman.com.base.request.ReqProduct;
 import pillihuaman.com.base.response.RespBase;
 import pillihuaman.com.base.response.RespControl;
-import pillihuaman.com.crypto.MyJsonWebToken;
 import pillihuaman.com.help.Constants;
 
 import javax.servlet.http.HttpServletRequest;
@@ -28,11 +27,11 @@ import javax.validation.Valid;
 
 
 public class ControlsController {
-	@Autowired
-	private HttpServletRequest httpServletRequest;
+
 	@Autowired
 	private ControlService controlService;
-
+	@Autowired
+	private HttpServletRequest httpServletRequest;
 	@Operation(summary = "Save control by system and user", description = "Save control by system and user", tags = { "" }, security = {
 			@SecurityRequirement(name = Constants.BEARER_JWT) })
 	@ApiResponses(value = {
@@ -44,14 +43,20 @@ public class ControlsController {
 	@PostMapping(path = { Constants.BASE_ENDPOINT + "/control/saveControl" }, produces = {MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<RespBase<RespControl>> saveControl(
 			@PathVariable String access,
-			@Valid  @RequestBody ReqBase<ReqControl> request){
-		MyJsonWebToken jwt = (MyJsonWebToken) httpServletRequest.getAttribute("jwt");
+			@Valid  @RequestBody ReqBase<ReqControl> request ,HttpServletRequest jwts){
+		MyJsonWebToken jwtss = (MyJsonWebToken) httpServletRequest.getAttribute("jwt");
+		MyJsonWebToken jwt = (MyJsonWebToken) jwts.getAttribute("jwt");
 		RespBase<RespControl> response = controlService.saveControl( jwt,request);
 		return ResponseEntity.ok(response);
 	}
 
 	@Operation(summary = "Get list control by system and user", description = "Get list control by system and user", tags = { "" }, security = {
 			@SecurityRequirement(name = Constants.BEARER_JWT) })
+
+
+
+
+	
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = Constants.SERVER_200, description = Constants.OPERACION_EXITOSA),
 			@ApiResponse(responseCode = Constants.SERVER_400, description = Constants.ERROR_VALIDACION, content = {
@@ -61,8 +66,8 @@ public class ControlsController {
 	@GetMapping(path = { Constants.BASE_ENDPOINT + "/control/listControl" }, produces = {MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<RespBase<RespControl>> listControl(
 			@PathVariable String access,
-			@Valid @RequestBody ReqBase<ReqControl> request){
-		MyJsonWebToken jwt = (MyJsonWebToken) httpServletRequest.getAttribute("jwt");
+			@Valid @RequestBody ReqBase<ReqControl> request ,HttpServletRequest jwts){
+		MyJsonWebToken jwt = (MyJsonWebToken) jwts.getAttribute("jwt");
 		RespBase<RespControl> response = controlService.listControl( jwt,request);
 		return ResponseEntity.ok(response);
 	}

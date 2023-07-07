@@ -5,13 +5,13 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pillihuaman.com.Service.ControlService;
+import pillihuaman.com.base.commons.MyJsonWebToken;
 import pillihuaman.com.base.request.ReqBase;
 import pillihuaman.com.base.request.ReqControl;
 import pillihuaman.com.base.response.RespBase;
 import pillihuaman.com.base.response.RespControl;
 import pillihuaman.com.basebd.control.domain.dao.ControlDAO;
 import pillihuaman.com.basebd.help.ConvertClass;
-import pillihuaman.com.crypto.MyJsonWebToken;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +34,7 @@ public class ControlServiceImpl implements ControlService {
     @Override
     public RespBase<RespControl> saveControl(MyJsonWebToken token, ReqBase<ReqControl> request) {
         RespBase<RespControl> re = new RespBase<>();
-        ;
-        List<RespControl> e = ControlDAO.saveControl(request.getData());
+        List<RespControl> e = ControlDAO.saveControl(request.getData(),token);
         if (e != null ) {
             re.setPayload(e.get(0));
             RespBase.Status s = new RespBase.Status();

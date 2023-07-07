@@ -6,3 +6,51 @@
 {"_id":{"$oid":"63c433c595d3135a68c2bc2f"},"idParameter":6,"idCode":"PCT000001","name":"XXL","Description":"talla de productos tipo ropa","auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2022-11-13T08:46:42.996Z"}}}
 {"_id":{"$oid":"63c433c595d3135a68c2bc30"},"idParameter":7,"idCode":"PCT000001","name":"XXXL","Description":"talla de productos tipo ropa","auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2022-11-13T08:46:42.996Z"}}}
 {"_id":{"$oid":"63c88913c366138ea8c73635"},"auditEntity":{"codUsuRegis":"ZPH","fecRegis":{"$date":"2022-11-13T08:46:42.996Z"}}}
+1988deza...@@@
+productType
+Vehicles
+   Vehicles
+
+Housing
+  Home sales
+  Rentals
+  
+Home & Garden
+  Furniture
+  Household
+  Appliances
+  Tools
+  Garden
+Electronics
+  Electronics & computers
+  Mobile phones
+Classifieds
+  Garage Sale
+  Miscellaneous
+  
+Hobbies
+ Sport & Outdoors
+ Antiques & Collectibles
+ Musical Instruments
+ Arts & Crafts
+ Auto parts
+ Auto parts
+ Bicycles
+ 
+Clothing & Accessories
+ Women's clothing & shoes
+ Men's clothing & shoes
+ Jewerly & Accessories
+ Bags & Luggage
+Family
+  Baby & Kids
+  Health & beauty
+  Toys & Games
+  Pet Supplies
+
+Entertainment
+ Videos Games
+ Book, Movies & Music
+
+
+

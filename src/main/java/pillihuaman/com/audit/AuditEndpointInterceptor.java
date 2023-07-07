@@ -13,8 +13,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+import pillihuaman.com.base.commons.MyJsonWebToken;
 import pillihuaman.com.base.response.RespBase;
-import pillihuaman.com.crypto.MyJsonWebToken;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

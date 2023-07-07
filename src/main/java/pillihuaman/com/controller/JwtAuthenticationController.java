@@ -1,6 +1,13 @@
 
 package pillihuaman.com.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -8,21 +15,11 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
-
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import org.springframework.web.bind.annotation.*;
 import pillihuaman.com.JwtTokenUtil;
 import pillihuaman.com.JwtUserDetailsService;
 import pillihuaman.com.Service.ControlService;
+import pillihuaman.com.base.commons.MyJsonWebToken;
 import pillihuaman.com.base.request.ReqBase;
 import pillihuaman.com.base.request.ReqControl;
 import pillihuaman.com.base.request.ReqUser;
@@ -75,7 +72,16 @@ public class JwtAuthenticationController {
                 ReqControl d = new ReqControl();
                 d.setId_user(respo.getPayload().getId_user());
                 request.setData(d);
-                auth.setId_user(respo.getPayload().getId_user().toString());
+                auth.setAlias(respo.getPayload().getAlias());
+                auth.setMail(respo.getPayload().getMail());
+                auth.setUsername(respo.getPayload().getUsername());
+                MyJsonWebToken con= new MyJsonWebToken();
+                MyJsonWebToken.User use= new  MyJsonWebToken.User();
+                use.setUser(respo.getPayload().getUsername());
+                use.setMail(respo.getPayload().getMail());
+                use.setIdUser(new ObjectId(respo.getPayload().getId_user()));
+                con.setUser(use);
+                auth.setUserInfo("");
                 RespBase<RespControl> re = controlService.listControl(null, request);
                 if (re != null) {
                     if (re.getPayload() != null) {

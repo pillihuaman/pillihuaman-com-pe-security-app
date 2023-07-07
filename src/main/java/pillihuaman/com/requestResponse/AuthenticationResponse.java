@@ -1,11 +1,7 @@
 package pillihuaman.com.requestResponse;
 
 
-import org.bson.types.ObjectId;
 import pillihuaman.com.base.request.ReqControl;
-import pillihuaman.com.base.response.RespBase;
-import pillihuaman.com.base.response.RespUser;
-import pillihuaman.com.basebd.control.domain.Control;
 
 import java.util.List;
 
@@ -14,17 +10,43 @@ public class AuthenticationResponse {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String id_user;
+	private String alias;
+	private String mail;
+	private String username;
 	private String token;
-	private int idSystem;
+	private String userInfo;
 	private List<ReqControl> control;
 
-	public String getId_user() {
-		return id_user;
+	public String getAlias() {
+		return alias;
 	}
 
-	public void setId_user(String id_user) {
-		this.id_user = id_user;
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getUserInfo() {
+		return userInfo;
+	}
+
+	public void setUserInfo(String userInfo) {
+		this.userInfo = userInfo;
 	}
 
 	public String getToken() {
@@ -35,13 +57,6 @@ public class AuthenticationResponse {
 		this.token = token;
 	}
 
-	public int getIdSystem() {
-		return idSystem;
-	}
-
-	public void setIdSystem(int idSystem) {
-		this.idSystem = idSystem;
-	}
 
 	public List<ReqControl> getControl() {
 		return control;

@@ -1,19 +1,27 @@
 package pillihuaman.com;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Component;
+
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 import java.io.Serializable;
+import java.security.SecureRandom;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Function;import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-
+import java.util.function.Function;
 @Component
 public class JwtTokenUtil implements Serializable {
 	private static final long serialVersionUID = -2550185165626007488L;
+
 	public static final long JWT_TOKEN_VALIDITY =  90000000;
-	 @Value("${jwt.secret}")
+
+	@Value("${jwt.secret}")
 	private String secret; // retrieve username from jwt token
 
 	public String getUsernameFromToken(String token) {
@@ -50,9 +58,16 @@ public class JwtTokenUtil implements Serializable {
 	// compaction of the JWT to a URL-safe string
 
 	private String doGenerateToken(Map<String, Object> claims, String subject) {
+		SecureRandom secureRandom = new SecureRandom();
+		byte[] keyBytes = new byte[64]; // 64 bytes = 512 bits
+		secureRandom.nextBytes(keyBytes);
+		SecretKey key = new SecretKeySpec(keyBytes, "HmacSHA512");
+
 		return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
 				.setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY ))
 				.signWith(SignatureAlgorithm.HS512, secret).compact();
+
+
 	} // validate token
 
 	public Boolean validateToken(String token, UserDetails userDetails) {
