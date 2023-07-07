@@ -1,0 +1,48 @@
+$ java --version
+java 20 2023-03-21
+Java(TM) SE Runtime Environment (build 20+36-2344)
+Java HotSpot(TM) 64-Bit Server VM (build 20+36-2344, mixed mode, sharing)
+
+$ node --version
+v18.16.0
+
+$ npm --version
+9.5.1
+
+PS D:\Alamoda\alamodaperu.com> ng --version
+Your global Angular CLI version (15.2.6) is greater than your local version (13.2.6). The local Angular CLI version is used.
+
+To disable this warning use "ng config -g cli.warnings.versionMismatch false".
+
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+    
+
+Angular CLI: 13.2.6
+Node: 18.16.0 (Unsupported)
+Package Manager: npm 9.5.1
+OS: win32 x64
+
+Angular: 13.2.7
+... animations, common, compiler, compiler-cli, core, forms
+... platform-browser, platform-browser-dynamic, router
+
+Package                         Version
+---------------------------------------------------------
+@angular-devkit/architect       0.1303.11
+@angular-devkit/build-angular   13.3.11
+@angular-devkit/core            13.3.11
+@angular-devkit/schematics      13.2.6
+@angular/cdk                    13.3.9
+@angular/cli                    13.2.6
+@angular/localize               9.1.13
+@angular/material               13.3.9
+@schematics/angular             15.2.5
+rxjs                            7.5.7
+typescript                      4.5.5
+
+Warning: The current version of Node (18.16.0) is not supported by Angular.
